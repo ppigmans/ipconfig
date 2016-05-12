@@ -1,13 +1,9 @@
-#!/bin/sh
-echo
-echo
-echo
 echo "Uw ip adress is"
-ifconfig | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1 }'
 echo
+ipconfig=$( ifconfig eth1 | head -n 2 | sed 'N;s/\n/ /;N;s/\n/ /' | awk '{ print $7}' | cut -d: -f2 )
+echo "${ipconfig}"
 echo
-echo "negeer het 127.x.x.x adres want dit is uw locale IP" 
-echo "Press enter to continue..."
+echo "Druk op enter om door te gaan..."
 read enter
-
 exit 1
+
