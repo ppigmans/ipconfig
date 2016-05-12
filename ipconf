@@ -1,0 +1,13 @@
+#!/bin/sh
+echo
+echo
+echo
+echo "Uw ip adress is"
+ifconfig | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1 }'
+echo
+echo
+echo "negeer het 127.x.x.x adres want dit is uw locale IP" 
+echo "Press enter to continue..."
+read enter
+
+exit 1
