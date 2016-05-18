@@ -11,6 +11,7 @@ echo
 echo "Uw ip adress is"
 echo
 kabel=$( ifconfig | grep -A 1 "eth" | sed 'N;s/\n/ /;N;s/\n/ /' | awk '{ print $7}' | cut -d: -f2 )
+kabel=$( ifconfig | grep -A 1 "enx" | sed 'N;s/\n/ /;N;s/\n/ /' | awk '{ print $7}' | cut -d: -f2 )
 echo "${kabel}"
 echo
 echo "Druk op enter om door te gaan..."
